@@ -64,7 +64,7 @@
     <article id="post-leetcode001" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/03/25/leetcode001/" class="article-date">
-  <time datetime="2015-03-25T09:07:02.000Z" itemprop="datePublished">2015-03-25</time>
+  <time datetime="2015-03-25T09:09:44.000Z" itemprop="datePublished">2015-03-25</time>
 </a>
     
   </div>
@@ -84,7 +84,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include &lt;algorithm&gt;</span></span><br><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    vector&lt;int&gt; twoSum(vector&lt;int&gt; &amp;numbers, int target) &#123;</span><br><span class="line">        vector&lt;int&gt; ans;</span><br><span class="line">        vector&lt;int&gt; temp = numbers;</span><br><span class="line">        sort(temp.begin(), temp.end());</span><br><span class="line">        <span class="keyword">for</span> (int i = <span class="number">0</span>, j = temp.size()-<span class="number">1</span>; ; i ++) &#123;</span><br><span class="line">            <span class="keyword">while</span> (temp[i] + temp[j] &gt; target) j --;</span><br><span class="line">            <span class="keyword">if</span> (temp[i] + temp[j] == target) &#123;</span><br><span class="line">                <span class="keyword">for</span> (int k = <span class="number">0</span>; k &lt; numbers.size(); k ++) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (numbers[k] == temp[i] || numbers[k] == temp[j]) ans.push_back(k + <span class="number">1</span>);</span><br><span class="line">                &#125;</span><br><span class="line">                sort(ans.begin(), ans.end());</span><br><span class="line">                <span class="built_in">return</span> ans;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
 <h3 id="Run_server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
@@ -96,7 +96,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/03/25/leetcode001/" data-id="ci7oice3h0000nbzg2jlkqzqv" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/03/25/leetcode001/" data-id="ci7oiftac0000nqzgtcxql3g8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -141,7 +141,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/03/25/hello-world/" data-id="ci7oice480001nbzg5nkrnkxb" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/03/25/hello-world/" data-id="ci7oiftb20001nqzgf9ecpjs5" class="article-share-link">Share</a>
       
       
     </footer>
