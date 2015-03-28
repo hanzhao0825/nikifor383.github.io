@@ -61,6 +61,126 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-20150326leetcode007" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/03/28/20150326leetcode007/" class="article-date">
+  <time datetime="2015-03-28T12:48:29.000Z" itemprop="datePublished">2015-03-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/03/28/20150326leetcode007/">LeetCode Problem 007</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>这题好恶心……要考虑爆掉返回0，我写的一点也不美观。</p>
+<h2 id="Code">Code</h2><figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">int</span> <span class="keyword">reverse</span>(<span class="keyword">int</span> x) &#123;</span><br><span class="line">        <span class="keyword">if</span> (x == -<span class="number">2147483648</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>, m = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span> (x &lt; <span class="number">0</span>) &#123;</span><br><span class="line">            x = -x;</span><br><span class="line">            m = -<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span> (x != <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (ans != <span class="number">0</span> &amp;&amp; ans &gt; <span class="number">214748364</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">            ans *= <span class="number">10</span>;</span><br><span class="line">            ans += x % <span class="number">10</span>;</span><br><span class="line">            x /= <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans * m;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.nikifor383.science/2015/03/28/20150326leetcode007/" data-id="ci7t0p5xs00018jzgyruxbqkn" class="article-share-link">Share</a>
+      
+        <a href="http://blog.nikifor383.science/2015/03/28/20150326leetcode007/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-20150326leetcode006" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/03/28/20150326leetcode006/" class="article-date">
+  <time datetime="2015-03-28T12:38:31.000Z" itemprop="datePublished">2015-03-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/03/28/20150326leetcode006/">LeetCode Problem 006</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>直接计算下标可以，但是比较复杂，不如直接模拟。</p>
+<h2 id="Code">Code</h2><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">string</span> <span class="title">convert</span><span class="params">(<span class="keyword">string</span> s, <span class="keyword">int</span> nRows)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (nRows == <span class="number">1</span>) <span class="keyword">return</span> s;</span><br><span class="line">        <span class="keyword">string</span> t[nRows];</span><br><span class="line">        <span class="keyword">int</span> p = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (p &lt; s.size()) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nRows - <span class="number">1</span>; i ++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (p == s.size()) <span class="keyword">break</span>;</span><br><span class="line">                t[i] += s[p++];</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = nRows - <span class="number">1</span>; i &gt; <span class="number">0</span>; i --) &#123;</span><br><span class="line">                <span class="keyword">if</span> (p == s.size()) <span class="keyword">break</span>;</span><br><span class="line">                t[i] += s[p++];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">string</span> ans = <span class="string">""</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nRows; i ++) &#123;</span><br><span class="line">            ans += t[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.nikifor383.science/2015/03/28/20150326leetcode006/" data-id="ci7t0p5xt00028jzguvlgw1t3" class="article-share-link">Share</a>
+      
+        <a href="http://blog.nikifor383.science/2015/03/28/20150326leetcode006/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-20150326leetcode005" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/03/28/20150326leetcode005/" class="article-date">
+  <time datetime="2015-03-28T11:58:15.000Z" itemprop="datePublished">2015-03-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/03/28/20150326leetcode005/">LeetCode Problem 005</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>枚举回文串的中点。我写的有点不美观。</p>
+<h2 id="Code">Code</h2><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    string longestPalindrome(string s) &#123;</span><br><span class="line">        int bv = 1, <span class="keyword">bs</span> = 0, be = 0;</span><br><span class="line">        <span class="keyword">for</span> (int i = 0; i &lt; s.size(); i ++) &#123;</span><br><span class="line">            int ts = i, <span class="keyword">te</span> = i;</span><br><span class="line">            <span class="keyword">while</span> (ts &gt;= 0 &amp;&amp; <span class="keyword">te</span> &lt; s.size() &amp;&amp; s[ts] == s[<span class="keyword">te</span>]) &#123;</span><br><span class="line">                <span class="keyword">if</span> (<span class="keyword">te</span> - ts + 1 &gt; bv) &#123;</span><br><span class="line">                    bv = <span class="keyword">te</span> - ts + 1;</span><br><span class="line">                    <span class="keyword">bs</span> = ts;</span><br><span class="line">                    be = <span class="keyword">te</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                ts --; <span class="keyword">te</span> ++;</span><br><span class="line">            &#125;</span><br><span class="line">            ts = i; <span class="keyword">te</span> = i + 1;</span><br><span class="line">            <span class="keyword">while</span> (ts &gt;= 0 &amp;&amp; <span class="keyword">te</span> &lt; s.size() &amp;&amp; s[ts] == s[<span class="keyword">te</span>]) &#123;</span><br><span class="line">                <span class="keyword">if</span> (<span class="keyword">te</span> - ts + 1 &gt; bv) &#123;</span><br><span class="line">                    bv = <span class="keyword">te</span> - ts + 1;</span><br><span class="line">                    <span class="keyword">bs</span> = ts;</span><br><span class="line">                    be = <span class="keyword">te</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                ts --; <span class="keyword">te</span> ++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> s.<span class="literal">substr</span>(<span class="keyword">bs</span>, be - <span class="keyword">bs</span> + 1);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.nikifor383.science/2015/03/28/20150326leetcode005/" data-id="ci7t0p5xv00038jzgu7yyuply" class="article-share-link">Share</a>
+      
+        <a href="http://blog.nikifor383.science/2015/03/28/20150326leetcode005/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-20150326leetcode004" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/03/26/20150326leetcode004/" class="article-date">
@@ -91,7 +211,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.nikifor383.science/2015/03/26/20150326leetcode004/" data-id="ci7py8d96000142zgtz54a4pm" class="article-share-link">Share</a>
+      <a data-url="http://blog.nikifor383.science/2015/03/26/20150326leetcode004/" data-id="ci7t0p5y200048jzg78u1d7eb" class="article-share-link">Share</a>
       
         <a href="http://blog.nikifor383.science/2015/03/26/20150326leetcode004/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -131,7 +251,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.nikifor383.science/2015/03/25/20150325leetcode003/" data-id="ci7py8d98000242zgcrl07g4o" class="article-share-link">Share</a>
+      <a data-url="http://blog.nikifor383.science/2015/03/25/20150325leetcode003/" data-id="ci7t0p5y300058jzgntqayjka" class="article-share-link">Share</a>
       
         <a href="http://blog.nikifor383.science/2015/03/25/20150325leetcode003/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -171,7 +291,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.nikifor383.science/2015/03/25/20150325leetcode002/" data-id="ci7py8d9a000342zgp1i08bcb" class="article-share-link">Share</a>
+      <a data-url="http://blog.nikifor383.science/2015/03/25/20150325leetcode002/" data-id="ci7t0p5y400068jzgpqhayuk8" class="article-share-link">Share</a>
       
         <a href="http://blog.nikifor383.science/2015/03/25/20150325leetcode002/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -211,7 +331,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.nikifor383.science/2015/03/25/20150325leetcode001/" data-id="ci7py8d9b000442zgueethuya" class="article-share-link">Share</a>
+      <a data-url="http://blog.nikifor383.science/2015/03/25/20150325leetcode001/" data-id="ci7t0p5y500078jzgzlpw0v83" class="article-share-link">Share</a>
       
         <a href="http://blog.nikifor383.science/2015/03/25/20150325leetcode001/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -258,7 +378,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.nikifor383.science/2015/03/25/hello-world/" data-id="ci7py8d8g000042zgxv5y44n6" class="article-share-link">Share</a>
+      <a data-url="http://blog.nikifor383.science/2015/03/25/hello-world/" data-id="ci7t0p5xn00008jzggtxzvxug" class="article-share-link">Share</a>
       
         <a href="http://blog.nikifor383.science/2015/03/25/hello-world/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -285,7 +405,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">5</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">8</span></li></ul>
     </div>
   </div>
 
@@ -297,23 +417,23 @@
       <ul>
         
           <li>
+            <a href="/2015/03/28/20150326leetcode007/">LeetCode Problem 007</a>
+          </li>
+        
+          <li>
+            <a href="/2015/03/28/20150326leetcode006/">LeetCode Problem 006</a>
+          </li>
+        
+          <li>
+            <a href="/2015/03/28/20150326leetcode005/">LeetCode Problem 005</a>
+          </li>
+        
+          <li>
             <a href="/2015/03/26/20150326leetcode004/">LeetCode Problem 004</a>
           </li>
         
           <li>
             <a href="/2015/03/25/20150325leetcode003/">LeetCode Problem 003</a>
-          </li>
-        
-          <li>
-            <a href="/2015/03/25/20150325leetcode002/">LeetCode Problem 002</a>
-          </li>
-        
-          <li>
-            <a href="/2015/03/25/20150325leetcode001/">LeetCode Problem 001</a>
-          </li>
-        
-          <li>
-            <a href="/2015/03/25/hello-world/">Hello World</a>
           </li>
         
       </ul>

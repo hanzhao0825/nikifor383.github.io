@@ -3,20 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>LeetCode Problem 003 | My Blog</title>
+  <title>LeetCode Problem 007 | My Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="维护两个指针指向头尾，和一个记录字符是否出现过的标志。
-Code123456789101112131415class Solution &amp;#123;public:    int lengthOfLongestSubstring(string s) &amp;#123;        int start = 0, end, mark[256] = &amp;#123;0&amp;#125;, ans = 0;">
+  <meta name="description" content="这题好恶心……要考虑爆掉返回0，我写的一点也不美观。
+Code123456789101112131415161718class Solution &amp;#123;public:    int reverse(int x) &amp;#123;        if (x == -2147483648) return 0;        int ans = 0, m = 1;        if (x &amp;lt;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode Problem 003">
-<meta property="og:url" content="http://blog.nikifor383.science/2015/03/25/20150325leetcode003/index.html">
+<meta property="og:title" content="LeetCode Problem 007">
+<meta property="og:url" content="http://blog.nikifor383.science/2015/03/28/20150326leetcode007/index.html">
 <meta property="og:site_name" content="My Blog">
-<meta property="og:description" content="维护两个指针指向头尾，和一个记录字符是否出现过的标志。
-Code123456789101112131415class Solution &amp;#123;public:    int lengthOfLongestSubstring(string s) &amp;#123;        int start = 0, end, mark[256] = &amp;#123;0&amp;#125;, ans = 0;">
+<meta property="og:description" content="这题好恶心……要考虑爆掉返回0，我写的一点也不美观。
+Code123456789101112131415161718class Solution &amp;#123;public:    int reverse(int x) &amp;#123;        if (x == -2147483648) return 0;        int ans = 0, m = 1;        if (x &amp;lt;">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode Problem 003">
-<meta name="twitter:description" content="维护两个指针指向头尾，和一个记录字符是否出现过的标志。
-Code123456789101112131415class Solution &amp;#123;public:    int lengthOfLongestSubstring(string s) &amp;#123;        int start = 0, end, mark[256] = &amp;#123;0&amp;#125;, ans = 0;">
+<meta name="twitter:title" content="LeetCode Problem 007">
+<meta name="twitter:description" content="这题好恶心……要考虑爆掉返回0，我写的一点也不美观。
+Code123456789101112131415161718class Solution &amp;#123;public:    int reverse(int x) &amp;#123;        if (x == -2147483648) return 0;        int ans = 0, m = 1;        if (x &amp;lt;">
   
     <link rel="alternative" href="/atom.xml" title="My Blog" type="application/atom+xml">
   
@@ -62,10 +62,10 @@ Code123456789101112131415class Solution &amp;#123;public:    int lengthOfLongest
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-20150325leetcode003" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-20150326leetcode007" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2015/03/25/20150325leetcode003/" class="article-date">
-  <time datetime="2015-03-25T12:17:11.000Z" itemprop="datePublished">2015-03-25</time>
+    <a href="/2015/03/28/20150326leetcode007/" class="article-date">
+  <time datetime="2015-03-28T12:48:29.000Z" itemprop="datePublished">2015-03-28</time>
 </a>
     
   </div>
@@ -76,7 +76,7 @@ Code123456789101112131415class Solution &amp;#123;public:    int lengthOfLongest
         
   
     <h1 class="article-title" itemprop="name">
-      LeetCode Problem 003
+      LeetCode Problem 007
     </h1>
   
 
@@ -84,15 +84,15 @@ Code123456789101112131415class Solution &amp;#123;public:    int lengthOfLongest
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>维护两个指针指向头尾，和一个记录字符是否出现过的标志。</p>
-<h2 id="Code">Code</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int lengthOfLongestSubstring(string s) &#123;</span><br><span class="line">        int <span class="operator"><span class="keyword">start</span> = <span class="number">0</span>, <span class="keyword">end</span>, mark[<span class="number">256</span>] = &#123;<span class="number">0</span>&#125;, ans = <span class="number">0</span>;</span></span><br><span class="line">        for (<span class="operator"><span class="keyword">end</span> = <span class="number">0</span>;</span> <span class="operator"><span class="keyword">end</span> &lt; s.<span class="keyword">size</span>();</span> <span class="operator"><span class="keyword">end</span> ++) &#123;</span><br><span class="line">            while (mark[s[<span class="keyword">end</span>]] == <span class="number">1</span>)&#123;</span><br><span class="line">                mark[s[<span class="keyword">start</span>]] <span class="comment">--;</span></span><br><span class="line">                <span class="keyword">start</span> ++;</span></span><br><span class="line">            &#125;</span><br><span class="line">            mark[s[<span class="operator"><span class="keyword">end</span>]] ++;</span></span><br><span class="line">            ans = max(ans, <span class="operator"><span class="keyword">end</span>-<span class="keyword">start</span>+<span class="number">1</span>);</span></span><br><span class="line">        &#125;</span><br><span class="line">        return ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+        <p>这题好恶心……要考虑爆掉返回0，我写的一点也不美观。</p>
+<h2 id="Code">Code</h2><figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">int</span> <span class="keyword">reverse</span>(<span class="keyword">int</span> x) &#123;</span><br><span class="line">        <span class="keyword">if</span> (x == -<span class="number">2147483648</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>, m = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span> (x &lt; <span class="number">0</span>) &#123;</span><br><span class="line">            x = -x;</span><br><span class="line">            m = -<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span> (x != <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (ans != <span class="number">0</span> &amp;&amp; ans &gt; <span class="number">214748364</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">            ans *= <span class="number">10</span>;</span><br><span class="line">            ans += x % <span class="number">10</span>;</span><br><span class="line">            x /= <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans * m;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.nikifor383.science/2015/03/25/20150325leetcode003/" data-id="ci7t0p5y300058jzgntqayjka" class="article-share-link">Share</a>
+      <a data-url="http://blog.nikifor383.science/2015/03/28/20150326leetcode007/" data-id="ci7t0p5xs00018jzgyruxbqkn" class="article-share-link">Share</a>
       
-        <a href="http://blog.nikifor383.science/2015/03/25/20150325leetcode003/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://blog.nikifor383.science/2015/03/28/20150326leetcode007/#disqus_thread" class="article-comment-link">Comments</a>
       
       
     </footer>
@@ -101,19 +101,10 @@ Code123456789101112131415class Solution &amp;#123;public:    int lengthOfLongest
     
 <nav id="article-nav">
   
-    <a href="/2015/03/26/20150326leetcode004/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          LeetCode Problem 004
-        
-      </div>
-    </a>
   
-  
-    <a href="/2015/03/25/20150325leetcode002/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2015/03/28/20150326leetcode006/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">LeetCode Problem 002</div>
+      <div class="article-nav-title">LeetCode Problem 006</div>
     </a>
   
 </nav>
@@ -201,7 +192,7 @@ Code123456789101112131415class Solution &amp;#123;public:    int lengthOfLongest
 <script>
   var disqus_shortname = 'nikifor383';
   
-  var disqus_url = 'http://blog.nikifor383.science/2015/03/25/20150325leetcode003/';
+  var disqus_url = 'http://blog.nikifor383.science/2015/03/28/20150326leetcode007/';
   
   (function(){
     var dsq = document.createElement('script');
