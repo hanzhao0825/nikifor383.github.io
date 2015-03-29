@@ -61,6 +61,46 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-20150326leetcode009" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/03/29/20150326leetcode009/" class="article-date">
+  <time datetime="2015-03-29T10:55:20.000Z" itemprop="datePublished">2015-03-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/03/29/20150326leetcode009/">LeetCode Problem 009</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>暂时没有想到美观的写法…………………………</p>
+<h2 id="Code">Code</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> Solution &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isPalindrome</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (x &lt; <span class="number">0</span>) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        <span class="keyword">if</span> (!x) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">if</span> (x % <span class="number">10</span> != (x / <span class="keyword">int</span>(<span class="number">0.01</span> + <span class="built_in">pow</span>(<span class="number">10</span>, <span class="keyword">int</span>(<span class="built_in">log</span>(x) / <span class="built_in">log</span>(<span class="number">10</span>))))) % <span class="number">10</span>) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        <span class="keyword">if</span> (!(x / <span class="number">100</span>)) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">if</span> ((x / <span class="number">10</span>) % <span class="number">10</span> != (x / <span class="keyword">int</span>(<span class="number">0.01</span> + <span class="built_in">pow</span>(<span class="number">10</span>, <span class="keyword">int</span>(<span class="built_in">log</span>(x) / <span class="built_in">log</span>(<span class="number">10</span>)) - <span class="number">1</span>))) % <span class="number">10</span>) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        <span class="keyword">if</span> (!(x / <span class="number">10000</span>)) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">if</span> ((x / <span class="number">100</span>) % <span class="number">10</span> != (x / <span class="keyword">int</span>(<span class="number">0.01</span> + <span class="built_in">pow</span>(<span class="number">10</span>, <span class="keyword">int</span>(<span class="built_in">log</span>(x) / <span class="built_in">log</span>(<span class="number">10</span>)) - <span class="number">2</span>))) % <span class="number">10</span>) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        <span class="keyword">if</span> (!(x / <span class="number">1000000</span>)) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">if</span> ((x / <span class="number">1000</span>) % <span class="number">10</span> != (x / <span class="keyword">int</span>(<span class="number">0.01</span> + <span class="built_in">pow</span>(<span class="number">10</span>, <span class="keyword">int</span>(<span class="built_in">log</span>(x) / <span class="built_in">log</span>(<span class="number">10</span>)) - <span class="number">3</span>))) % <span class="number">10</span>) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        <span class="keyword">if</span> (!(x / <span class="number">100000000</span>)) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">if</span> ((x / <span class="number">10000</span>) % <span class="number">10</span> != (x / <span class="keyword">int</span>(<span class="number">0.01</span> + <span class="built_in">pow</span>(<span class="number">10</span>, <span class="keyword">int</span>(<span class="built_in">log</span>(x) / <span class="built_in">log</span>(<span class="number">10</span>)) - <span class="number">4</span>))) % <span class="number">10</span>) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.nikifor383.science/2015/03/29/20150326leetcode009/" data-id="ci7ubzfwg0001z1zgz4fw7e1m" class="article-share-link">Share</a>
+      
+        <a href="http://blog.nikifor383.science/2015/03/29/20150326leetcode009/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-20150326leetcode007" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/03/28/20150326leetcode007/" class="article-date">
@@ -89,7 +129,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.nikifor383.science/2015/03/28/20150326leetcode007/" data-id="ci7t0p5xs00018jzgyruxbqkn" class="article-share-link">Share</a>
+      <a data-url="http://blog.nikifor383.science/2015/03/28/20150326leetcode007/" data-id="ci7ubzfwh0002z1zgsuknktka" class="article-share-link">Share</a>
       
         <a href="http://blog.nikifor383.science/2015/03/28/20150326leetcode007/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -129,7 +169,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.nikifor383.science/2015/03/28/20150326leetcode006/" data-id="ci7t0p5xt00028jzguvlgw1t3" class="article-share-link">Share</a>
+      <a data-url="http://blog.nikifor383.science/2015/03/28/20150326leetcode006/" data-id="ci7ubzfwj0003z1zg5b5zd6xv" class="article-share-link">Share</a>
       
         <a href="http://blog.nikifor383.science/2015/03/28/20150326leetcode006/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -169,7 +209,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.nikifor383.science/2015/03/28/20150326leetcode005/" data-id="ci7t0p5xv00038jzgu7yyuply" class="article-share-link">Share</a>
+      <a data-url="http://blog.nikifor383.science/2015/03/28/20150326leetcode005/" data-id="ci7ubzfwl0004z1zgjbpup0so" class="article-share-link">Share</a>
       
         <a href="http://blog.nikifor383.science/2015/03/28/20150326leetcode005/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -211,7 +251,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.nikifor383.science/2015/03/26/20150326leetcode004/" data-id="ci7t0p5y200048jzg78u1d7eb" class="article-share-link">Share</a>
+      <a data-url="http://blog.nikifor383.science/2015/03/26/20150326leetcode004/" data-id="ci7ubzfwt0005z1zgdncz1kjt" class="article-share-link">Share</a>
       
         <a href="http://blog.nikifor383.science/2015/03/26/20150326leetcode004/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -251,7 +291,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.nikifor383.science/2015/03/25/20150325leetcode003/" data-id="ci7t0p5y300058jzgntqayjka" class="article-share-link">Share</a>
+      <a data-url="http://blog.nikifor383.science/2015/03/25/20150325leetcode003/" data-id="ci7ubzfwu0006z1zgacayzs26" class="article-share-link">Share</a>
       
         <a href="http://blog.nikifor383.science/2015/03/25/20150325leetcode003/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -291,7 +331,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.nikifor383.science/2015/03/25/20150325leetcode002/" data-id="ci7t0p5y400068jzgpqhayuk8" class="article-share-link">Share</a>
+      <a data-url="http://blog.nikifor383.science/2015/03/25/20150325leetcode002/" data-id="ci7ubzfww0007z1zgc4g3jybg" class="article-share-link">Share</a>
       
         <a href="http://blog.nikifor383.science/2015/03/25/20150325leetcode002/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -331,7 +371,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.nikifor383.science/2015/03/25/20150325leetcode001/" data-id="ci7t0p5y500078jzgzlpw0v83" class="article-share-link">Share</a>
+      <a data-url="http://blog.nikifor383.science/2015/03/25/20150325leetcode001/" data-id="ci7ubzfwx0008z1zgyplk62f5" class="article-share-link">Share</a>
       
         <a href="http://blog.nikifor383.science/2015/03/25/20150325leetcode001/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -378,7 +418,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.nikifor383.science/2015/03/25/hello-world/" data-id="ci7t0p5xn00008jzggtxzvxug" class="article-share-link">Share</a>
+      <a data-url="http://blog.nikifor383.science/2015/03/25/hello-world/" data-id="ci7ubzfw80000z1zg0lyt9hcf" class="article-share-link">Share</a>
       
         <a href="http://blog.nikifor383.science/2015/03/25/hello-world/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -405,7 +445,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">8</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 
@@ -415,6 +455,10 @@
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2015/03/29/20150326leetcode009/">LeetCode Problem 009</a>
+          </li>
         
           <li>
             <a href="/2015/03/28/20150326leetcode007/">LeetCode Problem 007</a>
@@ -430,10 +474,6 @@
         
           <li>
             <a href="/2015/03/26/20150326leetcode004/">LeetCode Problem 004</a>
-          </li>
-        
-          <li>
-            <a href="/2015/03/25/20150325leetcode003/">LeetCode Problem 003</a>
           </li>
         
       </ul>
